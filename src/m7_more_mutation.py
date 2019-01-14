@@ -169,13 +169,16 @@ def RETURN_circle(circle, color):
     where the color is either a string that Rosegraphics understands
     or a rg.Color object.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # Done: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
     #
     # HINT: Use the   clone   method to make the copy.
 
+    newcircle = circle.clone()
+    newcircle.fill_color = color
+    return newcircle
 
 def run_test_MUTATE_circle():
     """ Tests the   MUTATE_circle   function. """
@@ -301,12 +304,14 @@ def MUTATE_circle(circle, color, n):
     Precondition: The first argument is a rg.Circle and the second
                   argument is a color appropriate for Zellegraphics.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
     # HINT: This function can be implemented with just TWO lines of code.
 
+    circle.fill_color = color
+    circle.center=rg.Point(circle.center.x+n,circle.center.y)
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
